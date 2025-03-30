@@ -20,7 +20,9 @@ def load_transactions():
     data = transactions_sheet.get_all_records()
     return pd.DataFrame(data)
 
-st.title("📊 Transaction Dashboard")
+st.header("Netcreators Automation", divider="gray")
+st.subheader("📊 Transaction Dashboard")
+
 
 # Refresh Button
 if st.sidebar.button("🔄 Refresh Data"):
