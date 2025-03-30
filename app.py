@@ -52,6 +52,9 @@ if len(date_range) == 2:
     start_date, end_date = date_range
     df = df[(df["Timestamp"] >= pd.to_datetime(start_date)) & (df["Timestamp"] <= pd.to_datetime(end_date))]
 
+# Fix: Convert phoneNumber to string
+df["phoneNumber"] = df["phoneNumber"].astype(str)
+
 st.dataframe(df)
 
 # Charts
