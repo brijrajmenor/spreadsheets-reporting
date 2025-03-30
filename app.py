@@ -7,9 +7,7 @@ import altair as alt
 import time
 
 # Authenticate with Google Sheets
-with open("service.json") as f:
-    service_account_info = json.load(f)
-
+service_account_info = st.secrets["gcp_service_account"]
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 creds = Credentials.from_service_account_info(service_account_info, scopes=SCOPES)
 client = gspread.authorize(creds)
